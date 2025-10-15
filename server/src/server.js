@@ -1,6 +1,8 @@
+// Muat variabel lingkungan dari .env SEBELUM kode lainnya
 const path = require('path');
 const express = require('express');
 const app = express();
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') }); 
 
 // Definisikan lokasi file statis (hasil build Angular)
 const clientPath = path.join(__dirname, '..', '..' ,'client', 'dist', 'client', 'browser'); 
