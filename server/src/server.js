@@ -12,7 +12,7 @@ app.use(express.static(clientPath));
 
 // 3. Tangani rute yang tidak dikenal (harus selalu paling akhir)
 //    Ini penting untuk Single Page Application (SPA) Angular
-app.get('*', (req, res) => {
+app.get(/^(?!\/api).*/, (req, res) => {
   res.sendFile(path.join(clientPath, 'index.html'));
 });
 
